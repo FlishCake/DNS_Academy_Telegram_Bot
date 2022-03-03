@@ -20,6 +20,7 @@
   "homepage": "https://github.com/FlishCake/DNS_Academy_Telegram_Bot#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
+    "sqlite3": "^5.0.2",
     "telegraf": "^4.7.0"
   },
   "devDependencies": {
