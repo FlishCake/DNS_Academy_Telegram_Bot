@@ -2,9 +2,12 @@ const { Telegraf, Markup, session } = require('telegraf')
 require("dotenv").config()
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
+bot.use(session())
 
-bot.start((ctx) => ctx.reply(`Привет, ${ctx.session.name}!\nНапиши мне своё имя и фамилию.\n(Пример: Иван Иванов)`))
-bot.help((ctx) => ctx.reply('Send me a sticker'))
+bot.start((ctx) => ctx.reply(`Привет, ${ctx.message.from.first_name}!\nЗапрос на регистрацию отправлен.`))
+
+bot.help((ctx) => ctx.reply(''))
+
 bot.on('message', (ctx) => ctx.reply("Упс. Что-то пошло не так ;)"))
 
 bot.launch()
