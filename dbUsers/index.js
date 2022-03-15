@@ -12,7 +12,7 @@ db.serialize(() => {
   db.run('INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (111111, "Валентин", "Назаров", "Admin");')
 });
 
-exports.getUser = id => {
+module.exports.getUser = getUser = id => {
   db.each('SELECT * FROM users WHERE telegram_id = ${id};', (err, row) => {
     if (err) {
       console.error(err.message);

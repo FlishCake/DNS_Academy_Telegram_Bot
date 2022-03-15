@@ -1,5 +1,5 @@
 const { Telegraf, Markup, session } = require('telegraf')
-require("./dbUsers")
+let dbusers = require("./dbUsers")
 require("dotenv").config()
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
