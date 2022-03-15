@@ -13,14 +13,18 @@ db.serialize(() => {
 });
 
 let getUser = id => {
-  //db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "Admin");`)
+  let user = null;
+  
+  //db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "guest");`)
   
   db.each(`SELECT * FROM users WHERE telegram_id = ${id};`, (err, row) => {
     if (err) {
       console.error(err.message);
     }
-    console.log(row);
+    user = row;
   });
+  
+  console.log(user);
 }
 
 module.exports.getUser = getUser;
