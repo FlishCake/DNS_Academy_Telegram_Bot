@@ -13,7 +13,7 @@ db.serialize(() => {
 });
 
 let getUser = id => {
-  let user = null;
+  let user;
   
   //db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "guest");`)
   
@@ -29,7 +29,8 @@ let getUser = id => {
 
 module.exports.getUser = getUser;
 
-/*db.close((err) => {
+/*
+db.close((err) => {
   if (err) {
     return console.error(err.message);
   }
