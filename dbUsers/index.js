@@ -13,13 +13,13 @@ db.serialize(() => {
 });
 
 let getUser = id => {
-  db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "Admin");`)
+  //db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "Admin");`)
   
   db.each(`SELECT * FROM users WHERE telegram_id = ${id};`, (err, row) => {
     if (err) {
       console.error(err.message);
     }
-    console.log(row.firstname);
+    console.log(row);
   });
 }
 
