@@ -6,7 +6,7 @@ var db = new sqlite3.Database('./users.db', (err) => {
   console.log('Connected to the in-memory SQlite database.');
 });
 
-db.run('CREATE TABLE IF NOT EXIST Users (id INTEGER PRIMARY KAY AUTOINKREMENT, idTelegram INTEGER, firstName VARCHAR(40), lastName VARCHAR(40), group VARCHAR(40));');
+db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, telegram_id INTEGER, firstname VARCHAR(40), lastname VARCHAR(40), user_group VARCHAR(40));');
 
 db.close((err) => {
   if (err) {
