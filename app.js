@@ -6,7 +6,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 bot.use(session())
 
 bot.start((ctx) => {
-  getUser(ctx.message.from.id);
+  dbusers.getUser(ctx.message.from.id);
   ctx.reply(`Привет, ${ctx.message.from.first_name}!\n`);
   
 })
