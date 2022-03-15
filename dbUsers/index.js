@@ -17,14 +17,13 @@ let getUser = id => {
   
   //db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "guest");`)
   
-  db.each(`SELECT * FROM users WHERE telegram_id = ${id};`, (err, row) => {
+  return db.each(`SELECT * FROM users WHERE telegram_id = ${id};`, (err, row) => {
     if (err) {
       console.error(err.message);
     }
-    console.log(row);
-    return row;
+    //console.log(row);
   });
-}
+};
 
 module.exports.getUser = getUser;
 });
