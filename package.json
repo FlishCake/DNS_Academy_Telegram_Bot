@@ -2,10 +2,10 @@
   "name": "dns_academy_telegram_bot",
   "version": "1.0.0",
   "description": "## Содержание",
-  "main": "bot.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node bot.js",
-    "dev": "nodemon bot.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
