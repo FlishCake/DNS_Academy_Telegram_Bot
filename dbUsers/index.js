@@ -13,7 +13,7 @@ db.serialize(() => {
 });
 
 let getUser = id => {
-  db.each('SELECT * FROM users WHERE telegram_id = ${id};', (err, row) => {
+  db.each(`SELECT * FROM users WHERE telegram_id = ${id};`, (err, row) => {
     if (err) {
       console.error(err.message);
     }
