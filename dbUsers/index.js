@@ -15,9 +15,9 @@ db.serialize(() => {
 let getUser = id => {
   let user = {
     id: id,
-    firstname,
-    lastname,
-    userGroup
+    firstname: null,
+    lastname: null,
+    userGroup: null
   };
   
   //db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "guest");`)
