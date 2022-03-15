@@ -13,7 +13,12 @@ db.serialize(() => {
 });
 
 let getUser = id => {
-  let user;
+  let user = {
+    id: id,
+    firstname,
+    lastname,
+    userGroup
+  };
   
   //db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "guest");`)
   
@@ -21,7 +26,9 @@ let getUser = id => {
     if (err) {
       console.error(err.message);
     }
-    user = row;
+    user.firstname = row.firstname;
+    user.lastname = row.lastname;
+    user.userGroup = row.user_group;
   });
   
   console.log(user);
