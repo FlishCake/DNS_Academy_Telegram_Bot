@@ -9,15 +9,17 @@ var db = new sqlite3.Database('./users.db', (err) => {
 db.serialize(() => {
   db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, telegram_id INTEGER, firstname VARCHAR(40), lastname VARCHAR(40), user_group VARCHAR(40));');
 
-  db.run('INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (111111, "Валентин", "Назаров", "Admin");')
+  //db.run('INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (111111, "Валентин", "Назаров", "Admin");')
 });
 
 let getUser = id => {
+  db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "Admin");`)
+  
   db.each(`SELECT * FROM users WHERE telegram_id = ${id};`, (err, row) => {
     if (err) {
       console.error(err.message);
     }
-    console.log(row);
+    console.log(row.firstname);
   });
 }
 
