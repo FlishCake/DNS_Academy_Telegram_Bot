@@ -24,7 +24,7 @@ let getUser = id => {
     console.log(row);
     Object.assign(user, row);
   });
-  )};
+  });
   
   console.log(user);
 }
