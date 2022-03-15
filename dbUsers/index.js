@@ -13,7 +13,7 @@ db.serialize(() => {
 
 
 let getUser = id => {
-  let user = {};
+  //let user = {};
   
   //db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "guest");`)
   
@@ -22,11 +22,8 @@ let getUser = id => {
       console.error(err.message);
     }
     console.log(row);
-    Object.assign(user, row);
+    return row;
   });
-  
-  
-  console.log(user);
 }
 
 module.exports.getUser = getUser;
