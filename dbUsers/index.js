@@ -21,9 +21,10 @@ module.exports.getUser = getUser = id => {
   });
 }
 
-db.close((err) => {
+/*db.close((err) => {
   if (err) {
     return console.error(err.message);
   }
   console.log('Close the database connection.');
 });
+*/
