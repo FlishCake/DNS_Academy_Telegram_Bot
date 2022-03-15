@@ -21,6 +21,7 @@ let getUser = id => {
     if (err) {
       console.error(err.message);
     }
+    console.log(row);
     Object.assign(user, row);
   });
   
