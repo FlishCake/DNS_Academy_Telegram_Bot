@@ -16,7 +16,7 @@ let getUser = id => {
   let user = {};
   
   //db.run(`INSERT INTO users (telegram_id, firstname, lastname, user_group) VALUES (${id}, "Валентин", "Назаров", "guest");`)
-  
+  db.serialize(() => {
   db.each(`SELECT * FROM users WHERE telegram_id = ${id};`, (err, row) => {
     if (err) {
       console.error(err.message);
@@ -24,6 +24,7 @@ let getUser = id => {
     console.log(row);
     Object.assign(user, row);
   });
+  )};
   
   console.log(user);
 }
