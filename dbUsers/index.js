@@ -24,6 +24,7 @@ let getUser = id => {
       console.error(err.message);
     }
     Object.assign(row, user);
+    console.log(tow);
   });
   
   db.close((err) => {

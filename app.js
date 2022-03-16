@@ -7,7 +7,7 @@ bot.use(session())
 
 bot.start((ctx) => {
   let user = dbusers.getUser(ctx.message.from.id);
-  ctx.reply(`Привет, ${ctx.message.from.first_name}!\n ${user.firstname}`);
+  ctx.reply(`Привет, ${ctx.message.from.first_name}!\n ${user}`);
   
 })
 
