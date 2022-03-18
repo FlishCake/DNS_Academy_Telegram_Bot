@@ -21,8 +21,7 @@ let getUser = id => {
     if (err) {
       console.error(err.message);
     }
-    Object.assign(row, user);
-    console.log(row);
+    console.log(typeof row);
   });
   
   db.close((err) => {
